@@ -147,3 +147,52 @@ footer { padding: 30px 8%; color: var(--muted); border-top: 1px solid var(--bord
   .steps, .claims-grid, .results-grid, .evidence-columns, .rule-strip, .vote-buttons, .appeal-buttons, .comment-vote-buttons { grid-template-columns: 1fr; }
   .comment-header { align-items: flex-start; flex-direction: column; }
 }
+
+/* Version 9 additions */
+.badge {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  background: var(--panel-light);
+  color: var(--accent);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: .78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.badge.muted { color: var(--muted); }
+.claim-topline { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:10px; }
+.vote-row { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0; }
+.vote-btn {
+  border: 1px solid var(--border);
+  background: var(--panel-light);
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-weight: 900;
+  cursor: pointer;
+}
+.vote-btn:hover { border-color: var(--accent); transform: translateY(-1px); }
+.source-list { list-style:none; padding:0; margin:12px 0; display:grid; gap:12px; }
+.source-list li { background:#0f1522; border:1px solid var(--border); border-radius:12px; padding:12px; color:var(--muted); }
+.source-list strong { color:var(--text); }
+.source-list a { color:var(--accent); font-weight:900; text-decoration: underline; }
+.profile-panel, .moderator-panel, .profile-card, .moderator-card {
+  background: rgba(18, 24, 38, .92);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 24px;
+}
+.profile-stats { display:grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 16px; }
+.profile-stats div { background:#0f1522; border:1px solid var(--border); border-radius:12px; padding:14px; }
+.profile-stats span { display:block; color:var(--muted); font-size:.85rem; }
+.profile-stats strong { color:var(--accent); font-size:1.35rem; }
+.moderator-grid { display:grid; grid-template-columns: 1.2fr .8fr; gap:18px; }
+.review-item { background:#0f1522; border:1px solid var(--border); border-radius:14px; padding:14px; margin:12px 0; }
+.mini-form { display:grid; gap:12px; margin:12px 0; }
+.locked-note { border:1px solid var(--border); background:#0f1522; border-radius:12px; padding:12px; }
+details { border-top:1px solid var(--border); padding-top:12px; margin-top:12px; }
+details summary { cursor:pointer; color:var(--accent); font-weight:900; }
+@media (max-width: 850px) {
+  .profile-stats, .moderator-grid { grid-template-columns: 1fr; }
+}

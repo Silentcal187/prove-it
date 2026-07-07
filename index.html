@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prove It | Supabase Connected</title>
+  <title>Prove It | Version 9</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -12,6 +12,8 @@
     <nav>
       <a href="#claims">Claims</a>
       <a href="#proven">Proven With Evidence</a>
+      <a href="#profile">Profile</a>
+      <a href="#moderator">Moderator</a>
       <a href="#submit">Submit</a>
       <a href="#account">Account</a>
     </nav>
@@ -24,7 +26,7 @@
         <h1>Time for evidence to decide our truth.</h1>
         <p class="hero-copy">
           This version connects Prove It to Supabase so claims, votes, evidence, comments,
-          appeals, clout, and cooldowns can become real shared data instead of browser-only pretend storage.
+          appeals, clout, cooldowns, source scoring, and final verdicts can become real shared data instead of browser-only pretend storage.
         </p>
         <div class="hero-actions">
           <a class="btn primary" href="#submit">Submit a claim</a>
@@ -33,7 +35,7 @@
       </div>
       <div class="hero-card">
         <span class="status">Supabase Connected</span>
-        <h2>Database Version 8</h2>
+        <h2>Database Version 9</h2>
         <p id="connectionStatus">Checking connection...</p>
         <div class="meter"><div style="width: 92%"></div></div>
         <small>The shoebox has been replaced with an actual database. Civilization limps forward.</small>
@@ -71,6 +73,19 @@
       <h2>Proven With Evidence</h2>
       <p class="section-intro">Closed claims land here with verdict status and source basis.</p>
       <div class="results-grid" id="resultsGrid"></div>
+    </section>
+
+
+    <section id="profile" class="section profile-section">
+      <h2>User Profile & Clout</h2>
+      <p class="section-intro">Your public credibility score, comment cooldown status, and account role live here.</p>
+      <div id="profilePanel" class="profile-panel"></div>
+    </section>
+
+    <section id="moderator" class="section moderator-section">
+      <h2>Moderator Dashboard</h2>
+      <p class="section-intro">Review pending evidence, adjust source-domain credibility, and keep the platform from turning into a rumor blender.</p>
+      <div id="moderatorPanel" class="moderator-panel"></div>
     </section>
 
     <section id="submit" class="section submit-section">
