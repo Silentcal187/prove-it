@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prove It | Supabase Connected</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">Prove It</div>
+    <nav>
+      <a href="#claims">Claims</a>
+      <a href="#proven">Proven With Evidence</a>
+      <a href="#submit">Submit</a>
+      <a href="#account">Account</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Facts provided. Sources cited. You decide.</p>
+        <h1>Time for evidence to decide our truth.</h1>
+        <p class="hero-copy">
+          This version connects Prove It to Supabase so claims, votes, evidence, comments,
+          appeals, clout, and cooldowns can become real shared data instead of browser-only pretend storage.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#submit">Submit a claim</a>
+          <a class="btn secondary" href="#claims">View claims</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <span class="status">Supabase Connected</span>
+        <h2>Database Version 8</h2>
+        <p id="connectionStatus">Checking connection...</p>
+        <div class="meter"><div style="width: 92%"></div></div>
+        <small>The shoebox has been replaced with an actual database. Civilization limps forward.</small>
+      </div>
+    </section>
+
+    <section id="account" class="section submit-section">
+      <h2>Account</h2>
+      <p class="section-intro">Log in before submitting claims, evidence, votes, comments, or appeals.</p>
+      <form id="authForm" class="claim-form">
+        <label>
+          Email
+          <input type="email" id="authEmail" required />
+        </label>
+        <label>
+          Password
+          <input type="password" id="authPassword" required />
+        </label>
+        <div class="hero-actions">
+          <button class="btn primary" type="button" id="loginButton">Log in</button>
+          <button class="btn secondary" type="button" id="signupButton">Sign up</button>
+          <button class="btn secondary" type="button" id="logoutButton">Log out</button>
+        </div>
+      </form>
+      <p class="note" id="authStatus">Not logged in.</p>
+    </section>
+
+    <section id="claims" class="section claims-section">
+      <h2>Open Claims</h2>
+      <p class="section-intro">Vote Agree, Disagree, or Needs Evidence. Add sources for either side before voting, because apparently facts enjoy being invited.</p>
+      <div class="claims-grid" id="claimsGrid"></div>
+    </section>
+
+    <section id="proven" class="section results-section">
+      <h2>Proven With Evidence</h2>
+      <p class="section-intro">Closed claims land here with verdict status and source basis.</p>
+      <div class="results-grid" id="resultsGrid"></div>
+    </section>
+
+    <section id="submit" class="section submit-section">
+      <h2>Submit a Claim</h2>
+      <form id="claimForm" class="claim-form">
+        <label>
+          Claim title
+          <input type="text" id="claimTitle" placeholder="Example: Electric vehicles are cheaper long-term" required />
+        </label>
+        <label>
+          Claim details
+          <textarea id="claimReason" placeholder="Explain the claim and why it should be reviewed." required></textarea>
+        </label>
+        <label>
+          Category
+          <input type="text" id="claimCategory" placeholder="Science, politics, health, construction, etc." />
+        </label>
+        <button class="btn primary" type="submit">Add claim to database</button>
+      </form>
+      <p class="note">This saves to Supabase after you log in.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Prove It. Built for evidence, not internet shouting matches.</p>
+  </footer>
+
+  <script type="module" src="supabase-app.js"></script>
+</body>
+</html>
